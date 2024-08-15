@@ -1,0 +1,35 @@
+{
+  "template_name": "Шаблон Радио",
+  "type": "entity",
+  "name": {
+    "text": "Введите нужное вам имя прототипа"
+  },
+  "id": {
+    "text": "Введите нужное вам ИД прототипа"
+  },
+  "description": {
+    "text": "Введите нужное вам описание прототипа",
+    "default": "Это радио)"
+  },
+  "parent": {
+    "text": "Введите нужное вам ид парента прототипа",
+    "default": "BaseItem",
+    "default_can_be_changed": false
+  },
+  "abstract": {
+    "text": "Абстрактное",
+    "default": false,
+    "type": "bool"
+  },
+  "components": {
+    "Sprite": {},
+    "EmitSoundOnUse": {
+      "attrs": {"path":  {}}
+    },
+    "ItemCooldown": {},
+    "UseDelay": {
+      "attrs": {"delay":  {"default": 120}
+      }
+    }
+  }
+}
