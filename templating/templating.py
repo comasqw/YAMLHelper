@@ -140,11 +140,11 @@ class StreamLitTemplating(_Template):
                 attr_text = attrs_dct[attr].get(Json.TEXT)
                 attr_type = attrs_dct[attr].get(Json.TYPE)
                 value = None
-                can_be_changed = False
+                can_be_changed = True
                 if attr in default_attrs:
                     attr_values = values.get(Json.ATTRS)[attr]
                     value = attr_values.get(Json.DEFAULT)
-                    can_be_changed = attr_values.get(Json.DF_CAN_BE_CHANGED, False)
+                    can_be_changed = attr_values.get(Json.DF_CAN_BE_CHANGED, True)
 
                 if attr_type == Json.LIST:
                     st.subheader(f"{attr} values")
@@ -154,7 +154,7 @@ class StreamLitTemplating(_Template):
                     label=attr_text,
                     value=value,
                     placeholder=attr_text,
-                    disabled=can_be_changed
+                    disabled=not can_be_changed
                 )
 
                 result[attr] = user_input
